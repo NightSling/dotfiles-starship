@@ -1,19 +1,18 @@
 
 palette = "catppuccin_mocha"
 
-format = """
-[](blue) [$directory](lavender)$git_branch$git_status $fill$nodejs$rust$python$java$package$nix_shell$cmd_duration
-$character"""
+format = "[$directory](lavender) $character"
+right_format = "$git_branch$git_status $golang$nodejs$rust$python$java$package$nix_shell$cmd_duration"
 
 [character]
-success_symbol = "[\\$](green)"
-error_symbol = "[\\$](red)"
+success_symbol = "[\\$](mauve)"
+error_symbol = "[\\$](maroon)"
 vimcmd_symbol = "[](blue)"
 format = "$symbol "
 
 [directory]
 style = "lavender"
-format = "[$path]($style) "
+format = "[$path]($style)"
 
 [git_branch]
 symbol = ""
@@ -60,6 +59,12 @@ style = "red"
 format = '[$symbol$version]($style) '
 symbol = " "
 style = "yellow"
+
+[golang]
+format = '[$symbol$version]($style) '
+symbol = " "                         # Nerd Font icon for Go
+style = "sky"
+
 
 [package]
 format = '📦 [$version](lavender) '
